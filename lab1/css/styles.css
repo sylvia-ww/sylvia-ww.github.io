@@ -76,12 +76,13 @@ footer img {
 
 table {
     margin: 3em auto;
-    border: 5px solid rgb(42, 50, 46);
+    /* table border */
+    border: 5px solid #2f3c50;
     border-collapse: collapse;
 }
 
 th,td{
-    border: 3px solid #2f5046;
+    border: 5px solid #2f3c50;
 }
 
 td {
@@ -90,16 +91,17 @@ td {
     text-align: center;
 }
 
-td strong {
-    color: rgb(161, 225, 175);    
+td strong { 
+    color: rgb(161, 167, 225);    
 }
 
 #table-header {
-    background-color: #2f5046;
+    /* table header bg color */
+    background-color: #2f3c50;
 }
 
 .table-row {
-    background-color: #25463c;
+    background-color: #282f46;
     text-align: center;
 }
 ul {
@@ -109,7 +111,8 @@ ul {
     margin-bottom: 3em;
 }
 .hobby {
-    color: rgb(173, 255, 190);
+    font-weight: bold;
+    color: rgb(184, 194, 254);
 }
 
 
