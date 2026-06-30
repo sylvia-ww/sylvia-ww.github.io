@@ -7,16 +7,16 @@
 </head>
 <body>
      <header>
-            <h1>Operating Systems</h1>
+        <h1>Operating Systems</h1>
     </header>
     <hr class="hr-fade">
     <nav>
         <a href="index.html">Home</a>
-        <span>✦</span>
+        <span>◆︎</span>
         <a class="current-page" href="processes.html">Processes</a>
-        <span>✦</span>
+        <span>◆︎</span>
         <a href="race_conditions.html">Race conditions</a>
-        <span>✦</span>
+        <span>◆︎</span>
         <a href="mutex_sem.html">Mutexes vs Semaphores</a>
     </nav>
     <hr class="hr-fade">
@@ -51,37 +51,38 @@
         <p>Each process will have these attributes.</p>
         <p> These attributes help the operating system manage and control processes effectively.</p>
         <p>They are stored in a sturcutre called the <strong>Process Control Block (PCB)</strong>.</p>
-        <div id="prs-attr-parent">
-            <div>
-                <h3>Process ID (PID)</h3>
-                <p>A unique number assigned to each process, used by the operating system to identify it</p>
-            </div>
-            <div>
-                <h3>Process State</h3>
-                <p>Current status of the process</p>
-                <p>eg. running, waiting, ready to execute</p>
-            </div>
-            <div>
-                <h3>CPU Scheduling Information</h3>
-                <p>Data that helps the OS determine the next process to run</p>
-            </div>
-            <div>
-                <h3>I/O Information</h3>
-                <p>Which input/output devices is the process using?</p>
-            </div>
-            <div>
-                <h3>File Descriptors</h3>
-                <p>Open files, network connections, etc.</p>
-            </div>
-            <div>
-                <h3>Accounting Information:</h3>
-                <p>Eg. how long the process has run, CPU time used, etc.</p>
-            </div>
-            <div>
-                <h3>Memory Management Information</h3>
-                <p>Details about the processes' memory space</p>
-            </div>
-        </div>
+            <p>◆︎ ◆︎ ◆︎</p>
+            <table>
+                <tr>
+                    <td>Process ID</td>
+                    <td>Unique to each process. How the operating system identifies the process</td>
+                </tr>
+                <tr>
+                    <td>Process State</td>
+                    <td>Current status of the process (eg. running, waiting, ready to execute)</td>
+                </tr>
+                <tr>
+                    <td>CPU Scheduling Information</td>
+                    <td>Data that helps the OS determine the next process to run</td>
+                </tr>
+                <tr>
+                    <td>I/O Information</td>
+                    <td>Which input/output devices is the process using?</td>
+                </tr>
+                <tr>
+                    <td>File Descriptors</td>
+                    <td>Open files, network connections, etc.</td>
+                </tr>
+                <tr>
+                    <td>Accounting Information</td>
+                    <td>Eg. how long the process has run, CPU time used, etc.</td>
+                </tr>
+                <tr>
+                    <td>Memory Management Information</td>
+                    <td>Details about the processes' memory space</td>
+                </tr>
+                
+            </table>
     </div>
 
      <hr class="hr-footer">

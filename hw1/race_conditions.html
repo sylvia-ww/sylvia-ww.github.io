@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Race Conditions</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+     <header>
+        <h1>Operating Systems</h1>
+    </header>
+    <hr class="hr-fade">
+    <nav>
+        <a href="index.html">Home</a>
+        <span>◆︎</span>
+        <a href="processes.html">Processes</a>
+        <span>◆︎</span>
+        <a class="current-page" href="race_conditions.html">Race conditions</a>
+        <span>◆︎</span>
+        <a href="mutex_sem.html">Mutexes vs Semaphores</a>
+    </nav>
+    <hr class="hr-fade">
+
+    <div class="rc-div">
+        <h2 class="rc-h"> - What is a race condition - </h2>
+        <p><strong>Race Condition:</strong> When two or more processes/threads access a <strong>shared resource</strong> and the outcome is non-deterministic (not always the same).</p>
+        <p>This can lead to incorrect and/or unpredicatable results.</p>
+        
+      
+    </div>
+
+    <hr class="hr-fade">
+
+    <div class="rc-div">
+        <h2 class="rc-h">- Terms -</h2>
+        <table>
+            <tr>
+                <td>Shared Resource</td>
+                <td>Anything (variable, file, memory location, etc.) accessed by multiple processes. Protecting these is important in avoiding race conditions.</td>
+            </tr>
+            <tr>
+                <td>Concurrency</td>
+                <td>When multiple processes/threads execute simultaneously</td>
+            </tr>
+            <tr>
+                <td>Non-Atomic Operations</td>
+                <td>Operations that can be interrupted. Like how an atom can't be further divided, atomic operations are ones that can't be interrupated. Non-atomic operations are the opposite.</td>
+            </tr>
+        </table>
+    </div>
+
+    <hr class="hr-fade">
+
+    <div id="rc-last-div">
+        <h2 class="rc-h">- Example -</h2>
+        <figure>
+            <img src="./img/race_condition_example.png" alt="Example of a race condition" id="rc_example">
+        </figure>
+            <ol id="rc-ol">
+                <li class="rc-li">Process 1 reads the balance as 100</li>
+                <li class="rc-li">Process 2 unknowingly interrupts, reads the balance as 100</li>
+                <li class="rc-li">Process 2 subtracts 10, writes balance as 90</li>
+                <li class="rc-li">Process 1 adds 10, writes balance as 110</li>
+                <li class="rc-li"><strong>Result: </strong>The balance should be 100, but it's 110.</li>
+            </ol> 
+    </div>
+
+    <hr class="hr-footer">
+
+    <footer>
+        <div class="sources">
+            <a href="https://www.geeksforgeeks.org/operating-systems/operating-systems/">geeks for geeks: OS tutorial</a> <br>
+            <a href="https://www.geeksforgeeks.org/operating-systems/race-condition-in-operating-systems/">geeks for geeks: Race Conditions</a> 
+            <br>
+            sources
+        </div>
+        <div class="copyright-disclaimer">
+            CST336 Internet Programming. 2026 &copy; Wang <br>
+            The information in this webpage is fictitious.
+        </div>
+        <div>
+            <img src="img/csumb_logo_dark.png" alt="CSUMB Logo">
+        </div>
+    </footer>
+
+</body>
+</html>

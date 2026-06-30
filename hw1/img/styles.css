@@ -43,10 +43,7 @@ nav a:hover {
 
 /* all images */
 img {
-    display: block;
     border-radius: 0.5rem;
-    margin: 0 auto;
-    max-width: min(50vw, 30rem);
 }
 
 /* os diagram img */
@@ -121,12 +118,9 @@ footer img {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     flex-wrap: wrap;
-}
-#process-structure-parent figure img {
-    max-height: 30vh;
 }
 #process-structure-parent strong {
     color: rgb(146, 201, 162)
@@ -139,10 +133,8 @@ footer img {
 }
 #prs-strc-terms p {
     background-color: rgba(44, 48, 46, 0.767);
-    padding: 1rem;
-    margin: 0.5rem;
+    padding: 2rem;
     border-radius: 0.5rem;
-
 }
 
 /* process attirubutes definition section */
@@ -151,14 +143,14 @@ table {
     margin: 0 auto;
     border-collapse: collapse;
 }
-td:first-child {
+tr > td:first-child {
     text-align: end;
     font-weight: bold;
     color:rgb(171, 197, 189);
     padding-right: 1rem;
     border-right: 1px solid rgba(168, 168, 168, 0.24);
 }
-td:last-child {
+tr td:last-child {
     text-align:start;
     padding-left: 1rem;
 }
@@ -177,44 +169,10 @@ td {
 .rc-div {
     margin-bottom: 4rem;
 }
-.rc-ol {
-    text-align: center;
-}
 #rc-li{
     text-align: start;
 }
-#rc_example {
-    max-width: 30rem;
-}
-#rc-ol {
-    text-align: left;
-    width: 30rem;
+#rc-example {
+    display: block;
     margin: 0 auto;
-    list-style-position: inside;
-}
-#rc-last-div {
-    margin-bottom: 4rem;
-}
-
-/* mutex-semaphore page */
-.ms-h, .ms-div > p {
-    text-align: center;
-}
-.ms-div {
-    margin-bottom: 2rem;  
-}
-.ms-h{
-    margin-top: 2rem;
-}
-/* mutex semaphore table formatting */
-tr > td.advantages, tr > td.disadvantages {
-    width: 50vw;
-    font-weight: normal;
-}
-tr > td.advantages.th, tr > td.disadvantages.th {
-    padding-top: 2.5rem;
-    font-weight: bold;
-}
-tr > td.disadvantages {
-    color: rgb(225, 206, 182);
 }

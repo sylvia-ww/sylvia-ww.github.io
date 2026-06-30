@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mutexes vs Semaphores</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+     <header>
+        <h1>Operating Systems</h1>
+    </header>
+    <hr class="hr-fade">
+    <nav>
+        <a href="index.html">Home</a>
+        <span>◆︎</span>
+        <a href="processes.html">Processes</a>
+        <span>◆︎</span>
+        <a href="race_conditions.html">Race conditions</a>
+        <span>◆︎</span>
+        <a class="current-page"  href="mutex_sem.html">Mutexes vs Semaphores</a>
+    </nav>
+    <hr class="hr-fade">
+    
+    <h2 class="ms-h">- Mutexes -</h2>
+    <div class="ms-div">
+        <p>Also known as locks.</p>
+        <p>Mutex stands for "mutual exclusion object"</p>
+        <p>With mutexes, only one thread can access the shared section at a time</p>
+        <img src="./img/mutexes.png" alt="diagram of how mutexes work">
+        <table class="ms-table">
+            <tr class="ms-t">
+                <td class="advantages th">Advantages</td>
+                <td class="disadvantages th">Disadvantages</td>
+            </tr>
+            <tr class="ms-t">
+                <td class="advantages">No race conditions if used properly</td>
+                <td class="disadvantages">If thread holding the mutex goes to sleep, it blocks other threads, can lead to starvation</td>
+            </tr>
+            <tr class="ms-t">
+                <td class="advantages">Can be easier to work with, keeping track of mutexes is more explicit</td>
+                <td class="disadvantages">If used incorrectly (eg. forgetting to unlock), can cause deadlock</td>
+            </tr>
+        </table>
+    </div>
+
+    <hr class="hr-fade">
+
+     <h2 class="ms-h">- Semaphores -</h2>
+    <div class="ms-div">
+        <p>Semaphore: a non-negative integer variable shared between threads</p>
+        <p>The control mechanims is less strict.</p>
+        <p> Eg. up to n threads can access a resource, instead of mutual exclusion</p>
+        <img src="./img/semaphore.png" alt="diagram of how mutexes work">
+        <table class="ms-table">
+            <tr class="ms-t">
+                <td class="advantages th">Advantages</td>
+                <td class="disadvantages th">Disadvantages</td>
+            </tr>
+            <tr class="ms-t">
+                <td class="advantages">Can do things locks can't (eg. allowing up to n threads to access a resource)</td>
+                <td class="disadvantages">May be harder to work with as it requires implicit tracking of semaphore value</td>
+            </tr>
+            <tr class="ms-t">
+                <td class="advantages">Machine-independent, flexible resource management</td>
+                <td class="disadvantages">Loss of modulatrity, can't be used for large-scale systems</td>
+            </tr>
+        </table>
+    </div>
+
+    <hr class="hr-footer">
+
+    <footer>
+        <div class="sources">
+            <a href="https://www.geeksforgeeks.org/operating-systems/operating-systems/">geeks for geeks: OS tutorial</a> <br>
+            <a href="https://www.geeksforgeeks.org/operating-systems/mutex-vs-semaphore/">geeks for geeks: Mutexes vs Semaphores</a> 
+            <br>
+            sources
+        </div>
+        <div class="copyright-disclaimer">
+            CST336 Internet Programming. 2026 &copy; Wang <br>
+            The information in this webpage is fictitious.
+        </div>
+        <div>
+            <img src="img/csumb_logo_dark.png" alt="CSUMB Logo">
+        </div>
+    </footer>
+
+</body>
+</html>
