@@ -46,7 +46,7 @@ img {
     display: block;
     border-radius: 0.5rem;
     margin: 0 auto;
-    max-width: min(50vw, 30rem);
+    max-width: min(80vw, 30rem);
 }
 
 /* os diagram img */
@@ -182,9 +182,6 @@ td {
 }
 #rc-li{
     text-align: start;
-}
-#rc_example {
-    max-width: 30rem;
 }
 #rc-ol {
     text-align: left;
