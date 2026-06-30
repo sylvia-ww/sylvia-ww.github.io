@@ -3,10 +3,6 @@ header{
     text-align: center;
 }
 
-/* gen */
-strong {
-    color: rgb(205, 186, 250);
-}
 .current-page {
     font-weight: bold;
 }
@@ -34,7 +30,7 @@ nav a {
     color: rgb(161, 213, 237);
     text-decoration: none;
 }
-/* star spacing */
+/* nav star spacing */
 nav span{
     margin-left: 0.5rem;
     margin-right: 0.5rem;
@@ -58,20 +54,25 @@ img {
     max-height: 30vh
 
 }
+
+.hr-fade{
+    border:none;
+    height: 0.1rem;
+    background: linear-gradient(90deg,rgba(35, 35, 35, 1) 1%, rgb(99, 99, 99) 50%, rgba(35, 35, 35, 1) 100%);
+}
+/* home vertical spacing */
 .home-h, .home-div * {
     text-align: center;
 }
-.hr-fade{
-    border:none;
-    height: 0.2rem;
-    background: linear-gradient(90deg,rgba(35, 35, 35, 1) 1%, rgb(99, 99, 99) 50%, rgba(35, 35, 35, 1) 100%);
-}
-/* spacing */
 .home-div {
-    margin-bottom: 6rem;  
+    margin-bottom: 4rem;  
 }
-.home-h{
-    margin-top: 6rem;
+.home-h {
+    margin-top: 4rem;
+}
+/* bold text (os goals) */
+.home-div strong {
+    color: rgb(205, 186, 250);
 }
 
 /* footer */
@@ -79,7 +80,7 @@ footer {
     display: flex;
     justify-content: flex-end;
     font-size: 0.6em;
-    color: rgb(86, 104, 125);
+    color: rgb(123, 141, 161);
 }
 
 /* csumb logo */
@@ -90,6 +91,78 @@ footer img {
 }
 
 /* footer text */
+.sources {
+    flex-grow: 1;
+    text-align: left;
+}
+.sources * {
+    color: rgb(121, 121, 121);
+}
 .copyright-disclaimer {
     text-align: right;
+}
+
+/* what is a process spacing */
+.process-h, .process-div * {
+    text-align: center;
+}
+.process-div {
+    margin-bottom: 2rem;  
+}
+.process-h{
+    margin-top: 2rem;
+}
+
+/* process structure diagram section */
+#process-structure-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+#process-structure-parent strong {
+    color: rgb(146, 201, 162)
+}
+#prs-strc-terms {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+#prs-strc-terms p {
+    background-color: rgba(44, 48, 46, 0.767);
+    padding: 2rem;
+    border-radius: 1rem;
+    border-left: 2px solid rgba(115, 182, 155, 0.447);
+    border-right: 2px solid rgba(230, 226, 226, 0.142);
+    box-shadow: 0px 0px 1rem rgba(113, 113, 113, 0.313) ;
+}
+
+/* process attirubutes definition section */
+#prs-attr-h {
+    margin-top: 4rem;
+}
+#prs-attr-parent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+#prs-attr-parent > div {
+    background-color: rgba(44, 48, 46, 0.767);
+    padding: 1rem;
+    max-width: 8rem;
+    border-radius: 1rem;
+    border-bottom: 2px solid rgba(143, 212, 185, 0.447);
+    border-top: 2px solid rgba(230, 226, 226, 0.142);
+    box-shadow: 0px 0px 0.1rem rgba(113, 113, 113, 0.313);
+}
+#prs-attr-parent h3 {
+    margin-top: 0.5rem;
+    color: rgb(198, 241, 227);
 }

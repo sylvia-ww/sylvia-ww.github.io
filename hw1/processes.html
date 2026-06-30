@@ -3,8 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <title>Processes</title>
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    
+     <header>
+            <h1>Operating Systems</h1>
+    </header>
+    <hr class="hr-fade">
+    <nav>
+        <a href="index.html">Home</a>
+        <span>✦</span>
+        <a class="current-page" href="processes.html">Processes</a>
+        <span>✦</span>
+        <a href="race_conditions.html">Race conditions</a>
+        <span>✦</span>
+        <a href="mutex_sem.html">Mutexes vs Semaphores</a>
+    </nav>
+    <hr class="hr-fade">
+
+    <div class="process-div">
+        <h2 class="process-h"> - What is a process - </h2>
+        <p>When a program is executed, it becomes a process.</p>
+        <p>One program can create multiple processes (eg. by running it multiple times)</p>
+    </div>
+
+    <hr class="hr-fade">
+
+    <!-- process structure section -->
+    <h2 class="process-h">- Memory Layout of a Process -</h2>
+    <div id="process-structure-parent">
+        <figure>
+            <img src="./img/process_structure.png" alt="Process structure">
+        </figure>
+        <div id="prs-strc-terms">
+            <!-- process structure info / definitions -->
+             <p><strong>Stack</strong>: contains temporary data (eg. function params, return addresses, etc.)</p>
+             <p><strong>Heap</strong>: memory dynamically allocated to a process during its run time</p>
+             <p><strong>Data</strong>: contains global variables</p>
+             <p><strong>Text Section</strong>: contains execeutable instructions, typically read-only</p>
+        </div>
+    </div>
+
+    <hr class="hr-fade">
+
+    <div class="process-div">
+    <h2 class="process-h" id="prs-attr-h">- Attributes of a Process -</h2>
+        <p>Each process will have these attributes.</p>
+        <p> These attributes help the operating system manage and control processes effectively.</p>
+        <p>They are stored in a sturcutre called the <strong>Process Control Block (PCB)</strong>.</p>
+        <div id="prs-attr-parent">
+            <div>
+                <h3>Process ID (PID)</h3>
+                <p>A unique number assigned to each process, used by the operating system to identify it</p>
+            </div>
+            <div>
+                <h3>Process State</h3>
+                <p>Current status of the process</p>
+                <p>eg. running, waiting, ready to execute</p>
+            </div>
+            <div>
+                <h3>CPU Scheduling Information</h3>
+                <p>Data that helps the OS determine the next process to run</p>
+            </div>
+            <div>
+                <h3>I/O Information</h3>
+                <p>Which input/output devices is the process using?</p>
+            </div>
+            <div>
+                <h3>File Descriptors</h3>
+                <p>Open files, network connections, etc.</p>
+            </div>
+            <div>
+                <h3>Accounting Information:</h3>
+                <p>Eg. how long the process has run, CPU time used, etc.</p>
+            </div>
+            <div>
+                <h3>Memory Management Information</h3>
+                <p>Details about the processes' memory space</p>
+            </div>
+        </div>
+    </div>
+
+     <hr class="hr-footer">
+
+    <footer>
+        <div class="sources">
+            <a href="https://www.geeksforgeeks.org/operating-systems/operating-systems/">geeks for geeks: OS tutorial</a> <br>
+            <a href="https://www.geeksforgeeks.org/operating-systems/process-in-operating-system/">geeks for geeks: Process in OS</a> 
+            <br>
+            sources
+        </div>
+        <div class="copyright-disclaimer">
+            CST336 Internet Programming. 2026 &copy; Wang <br>
+            The information in this webpage is fictitious.
+        </div>
+        <div>
+            <img src="img/csumb_logo_dark.png" alt="CSUMB Logo">
+        </div>
+    </footer>
+
 </body>
 </html>
