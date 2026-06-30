@@ -177,15 +177,13 @@ td {
 .rc-div {
     margin-bottom: 4rem;
 }
-.rc-ol {
-    text-align: center;
-}
 #rc-li{
     text-align: start;
 }
 #rc-ol {
     text-align: left;
     width: 30rem;
+    max-width: 75vw;
     margin: 0 auto;
     list-style-position: inside;
 }
