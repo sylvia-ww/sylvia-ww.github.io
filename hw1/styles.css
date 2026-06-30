@@ -218,3 +218,7 @@ tr > td.advantages.th, tr > td.disadvantages.th {
 tr > td.disadvantages {
     color: rgb(225, 206, 182);
 }
+/* mutex-sem imgs */
+#mutex-png, #sem-png {
+    margin-top: 2rem;
+}
