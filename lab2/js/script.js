@@ -53,7 +53,7 @@ function checkGuess() {
     //if guess is invalid
     if(guess < 1 || guess > 99) {
         feedback.textContent = "Enter a number between 1 and 99";
-        feedback.style.color = "red";
+        feedback.style.color = "rgb(240, 115, 142)";
         return;
     }
 
@@ -68,14 +68,14 @@ function checkGuess() {
     if (guess == randomNumber) {
         wins++;
         feedback.textContent = "You guessed it! You won!";
-        feedback.style.color = "darkgreen";
+        feedback.style.color = "rgb(143, 178, 170)";
         gameOver();
     } else {  // incorrect guess
         document.querySelector("#guesses").textContent += (guess + " ");
         if (attempts == MAX_ATTEMPTS) {
             losses++;
             feedback.textContent = "Sorry, you lost!";
-            feedback.style.color = "red";
+            feedback.style.color = "rgb(240, 115, 142)";
             gameOver();
         } else if (guess > randomNumber) {
             feedback.textContent = "Guess was high";
