@@ -74,7 +74,7 @@ function checkGuess() {
         document.querySelector("#guesses").textContent += (guess + " ");
         if (attempts == MAX_ATTEMPTS) {
             losses++;
-            feedback.textContent = "Sorry, you lost!";
+            feedback.textContent = "Sorry, you lost! The number was "+randomNumber;
             feedback.style.color = "rgb(240, 115, 142)";
             gameOver();
         } else if (guess > randomNumber) {
