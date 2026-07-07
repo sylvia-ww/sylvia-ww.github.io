@@ -1,0 +1,12 @@
+:root {
+    --red: rgba(230, 99, 99, 1.00);
+    --green: rgba(99, 230, 190, 1.00);
+}
+
+body {
+    
+}
+
+img {
+    max-width: 3rem;
+}

@@ -50,3 +50,12 @@ input {
     background-color: rgb(236, 254, 250);
     border: none;
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: rgb(170, 170, 170);
+    font-weight: 300;
+    padding: 1rem;
+}
