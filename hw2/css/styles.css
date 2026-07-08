@@ -2,6 +2,7 @@
 :root {
     --red: rgba(230, 99, 99, 1.00);
     --green: rgba(99, 230, 190, 1.00);
+    --blue: rgb(97, 183, 195);
     --bg-gray: rgb(69, 67, 63);
     --bg-transparent: rgba(160, 160, 160, 0);
 }
@@ -82,7 +83,7 @@ input[type="range"] {
 }
 
 .submit-btn {
-    background-color: rgb(97, 183, 195);
+    background-color: var(--blue);
     font-family: visby_round;
 }
 

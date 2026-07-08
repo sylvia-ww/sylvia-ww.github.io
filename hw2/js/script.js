@@ -211,7 +211,7 @@ function gradeQuiz() {
         totalScore.style.setProperty("color", "");
         congrats_msg = document.querySelector('#congrats');
         congrats_msg.textContent = "Congratulations! Your score is pretty good."
-        congrats_msg.style.setProperty("color", "var(--green)", "important");
+        congrats_msg.style.setProperty("color", "var(--blue)", "important");
     }
 
     // update total attempts
