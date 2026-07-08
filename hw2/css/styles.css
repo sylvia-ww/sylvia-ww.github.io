@@ -1,12 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap');
 :root {
     --red: rgba(230, 99, 99, 1.00);
     --green: rgba(99, 230, 190, 1.00);
+    --bg-gray: rgb(69, 67, 63);
+    --bg-transparent: rgba(160, 160, 160, 0);
+}
+
+/* only for quiz header */
+@font-face {
+    font-family: visby_round;
+    src: url(VisbyRoundCF-Medium.woff2);
 }
 
 body {
-    
+    background-color: var(--bg-gray);
+    font-family: Quicksand, Arial, Helvetica, sans-serif;
+    color: white;
 }
 
+/* quiz header */
+.bg-info {
+    background-image: url('../img/us-map.jpg');
+    background-position: center;
+    background-size: 100vw;
+    margin-bottom: 3rem;
+    backdrop-filter: brightness(50%);
+    font-weight: bolder;
+    font-family: visby_round, Arial, Helvetica, sans-serif;
+}
+
+/* limit checkmark/xmark size */
 img {
     max-width: 3rem;
+    margin-right: 0.5rem;
+}
+
+/* radio button spacing */
+label {
+    margin-left: 0.1rem;
+    margin-right: 0.7rem;
+}
+
+/* question header */
+h5 {
+    color: rgb(159, 159, 159);
+}
+
+.bg-success, .bg-warning, .bg-danger {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+}
+
+/* feedback colors */
+.bg-success {
+    background-color: rgb(59, 167, 135) !important;
+}
+.bg-warning{
+    background-color: rgb(145, 127, 48) !important;
+}
+.bg-danger {
+    background-color: transparent !important;
+    padding: 0rem;
+}
+
+/* total score */
+#totalScore {
+    margin-top: 2rem;
+}
+
+/* submit button */
+.btn-info {
+    margin-top: 4rem;
+}
+
+/* slider */
+input[type="range"] {
+    accent-color: rgb(245, 238, 197);
+}
+
+.submit-btn {
+    background-color: rgb(97, 183, 195);
+    font-family: visby_round;
+}
+
+#totalAttempts {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+footer {
+    margin-bottom: 0.5rem;
 }

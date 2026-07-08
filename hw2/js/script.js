@@ -54,11 +54,13 @@ function displayQ4Choices() {
 function isFormValid() {
     let isValid = true;
     let q1Response = document.querySelector("#q1").value;
-    let validationFdbk = document.querySelector("#validationFdbk");
+    let validationFdbk = document.querySelector('#validationFdbk');
 
     if (q1Response === "") {
         isValid = false;
         validationFdbk.textContent = "Question 1 was not answered";
+        validationFdbk.style.setProperty("background-color", "var(--red)", "important");
+        validationFdbk.style.setProperty("padding", "1rem 2rem");
     }
 
     return isValid;
@@ -68,7 +70,10 @@ function gradeQuiz() {
     console.log("Grading quiz...");
 
     //check if form valid
-    document.querySelector("#validationFdbk").textContent = "";
+    let validationFdbk = document.querySelector("#validationFdbk");
+    validationFdbk.textContent = "";
+    validationFdbk.style.setProperty("background-color", "transparent", "important");
+    validationFdbk.style.setProperty("padding", "0rem");
     if (!isFormValid()) {
         return;
     }
@@ -92,7 +97,7 @@ function gradeQuiz() {
         feedback.textContent = "Correct!";
         feedback.className = "bg-success text-white";
         setMarkImage(index, "checkmark.png", "Checkmark");
-        score += 20;
+        score += 10;
     }
 
     function wrongAnswer(index) {
@@ -112,7 +117,7 @@ function gradeQuiz() {
     q1Feedback.className = "";
     markImg1.textContent = "";
 
-    // grading logic
+    // --grading logic--
     // question 1
     let q1Response = document.querySelector("#q1").value.toLowerCase();
     if (q1Response === "sacramento") {
@@ -147,20 +152,68 @@ function gradeQuiz() {
         wrongAnswer(4);
     }
 
+    //question 5
+    if (document.querySelector('#q5').value == 5) {
+        rightAnswer(5);
+    } else {
+        wrongAnswer(5);
+    }
+
+    // question 6
+    let q6Response = document.querySelector("#q6").value.toLowerCase();
+    if (q6Response === "superior") {
+        rightAnswer(6);
+    } else {
+        wrongAnswer(6);
+    }
+
+    // question 7
+    if (document.querySelector("#q7").value === "1911-10-11") {
+        rightAnswer(7)
+    } else {
+        wrongAnswer(7);
+    }
+
+    //question 8
+    if (document.querySelector('#q8').value == 50) {
+        rightAnswer(8)
+    } else {
+        wrongAnswer(8);
+    }
+
+    // question 9
+    let selectedQ9 = document.querySelector("input[name=q9]:checked");
+    if (selectedQ9 !== null && selectedQ9.value === "avo") {
+        rightAnswer(9);
+    } else {
+        wrongAnswer(9);
+    }
+
+    // question 10
+    let q10Response = document.querySelector("#q10").value.toLowerCase();
+    if (q10Response === "wyoming") {
+        rightAnswer(10);
+    } else {
+        wrongAnswer(10);
+    }
+
     // display total score
     totalScore = document.querySelector("#totalScore");
     totalScore.textContent = `Total Score: ${score}`;
     // <80 -> make it red
+    console.log(`Final score: ${score}`);
+    //if score is low, make it red
     if (score < 80) {
-        totalScore.style.color("red");
-    } 
+        totalScore.style.setProperty("color", "var(--red)", "important");
+    }
     // >80 -> congratulations message
     else {
+        totalScore.style.setProperty("color", "");
         congrats_msg = document.querySelector('#congrats');
         congrats_msg.textContent = "Congratulations! Your score is pretty good."
-        congrats_msg.style.color("green");
+        congrats_msg.style.setProperty("color", "var(--green)", "important");
     }
-    
+
     // update total attempts
     attempts++;
     document.querySelector("#totalAttempts").textContent = `Total Attempts: ${attempts}`;
