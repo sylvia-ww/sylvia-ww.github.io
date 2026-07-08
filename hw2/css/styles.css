@@ -3,6 +3,7 @@
     --red: rgba(230, 99, 99, 1.00);
     --green: rgba(99, 230, 190, 1.00);
     --blue: rgb(97, 183, 195);
+    --peach: rgb(243, 226, 180);
     --bg-gray: rgb(69, 67, 63);
     --bg-transparent: rgba(160, 160, 160, 0);
 }
@@ -73,8 +74,16 @@ h5 {
 }
 
 /* submit button */
-.btn-info {
+.submit-btn {
     margin-top: 4rem;
+    background-color: var(--peach);
+    font-family: visby_round;
+    border: 1px solid transparent;
+}
+.submit-btn:hover{
+    background-color: rgb(255, 241, 204);
+    border: 1px solid white;
+    transition: 1s;
 }
 
 /* slider */
@@ -82,9 +91,9 @@ input[type="range"] {
     accent-color: rgb(245, 238, 197);
 }
 
-.submit-btn {
-    background-color: var(--blue);
-    font-family: visby_round;
+#totalScore {
+    color: var(--peach) !important;
+    font-weight: bold;
 }
 
 #totalAttempts {
@@ -94,4 +103,5 @@ input[type="range"] {
 
 footer {
     margin-bottom: 0.5rem;
+    color: gray;
 }
