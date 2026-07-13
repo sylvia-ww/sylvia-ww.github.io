@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap');
+body {
+  background-color: rgb(214, 224, 235);
+  font-family: Quicksand, Arial, Helvetica, sans-serif;
+  margin: 2rem 20vw 0;
+  /* top left+right bottom */
+}
+/* diff font */
+#suggestedPassword,
+#city,
+#longitude,
+#latitude {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+label, div {
+  margin: 0.5rem 0 0 1rem; 
+  /* top right bottom left */
+}
+
+button {
+  margin-top: 3rem;
+}
+
+.indent {
+  margin: 1rem;
+}
+
+/* indent1 is just more indent */
+.indent1 {
+  margin-left: 2rem;
+  margin-right: 0.2rem;
+}
