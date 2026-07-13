@@ -169,6 +169,7 @@ async function validateForm(event) {
     usernameError.style.color = "red";
     isValid = false;
   } else {
+    usernameError.textContent = "";
     // if username not blank, check availability
     let usernameAvailable = await checkUsername(); //need await bc checkusername uses fetch (returns promise that eventually becomes true or false)
 
@@ -186,6 +187,8 @@ async function validateForm(event) {
     pw_error.textContent = "Password must be 6 characters or longer"
     pw_error.style.color = "red";
   } else {
+    //in case it passed prev check but fails other form submission checks
+    pw_error.textContent = "";
     // if password doesn't match confirmation
     let pw_again = document.querySelector("#passwordAgain").value;
     if (pw != pw_again) {
