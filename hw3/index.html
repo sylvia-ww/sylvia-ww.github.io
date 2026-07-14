@@ -25,7 +25,7 @@
     <div class="wrapper display">
         <img class="bigger-img" src="./img/temp-now.png" alt="temperature now">
         <div id="temperature">25</div>
-        <div id="degree-f">°F</div>
+        <div id="degree">°F</div>
         <div id="description">
             <span id="w-main">drizzle</span>
             <img id="weather-icon" src="https://openweathermap.org/payload/api/media/file/09d.png" alt="weather icon">
@@ -40,7 +40,12 @@
             <div class="blue">max</div>
         </div>
         <div class="toggle wrapper">
-
+            <!-- toggle credit: https://www.w3schools.com/howto/howto_css_switch.asp -->
+             <div>°F to C</div>
+            <label class="switch">
+                <input type="checkbox" id="toggle-btn">
+                <span class="slider round"></span>
+            </label>
         </div>
     </div>
 
