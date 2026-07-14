@@ -189,6 +189,12 @@ img.bigger-img {
 
 .blue, #weathergirl {
     color: var(--text-blue);
+    
+}
+
+#weathergirl {
+    margin: 0.5rem 0;
+    border-bottom: 1px dotted var(--text-blue);
 }
 
 /* TOGGLE THINGS WOO */
@@ -255,4 +261,11 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+a {
+    text-decoration: none;
+}
+a:visited {
+  color: var(--text-blue);
 }

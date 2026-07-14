@@ -33,11 +33,26 @@ async function getWeather() {
         let city = document.querySelector('#search-bar').value.toLowerCase();
         // easter egg :)
         if (city == 'weathergirl') {
-            // good song :)
-            window.open('https://www.youtube.com/watch?v=M7VSEZOQIlg', '_blank');
-            document.getElementById('weathergirl').textContent = "the weather forecast's calling for another cloudy day~"
+            //window.open('https://www.youtube.com/watch?v=M7VSEZOQIlg', '_blank');
+            let weathergirl = {
+                weather: [
+                    {
+                        id: 'weathergirl',
+                        main: "vivid skies",
+                        description: "may pass me by",
+                        icon: '10n',
+                    }
+                ],
+            }
+            document.getElementById('weathergirl').innerHTML =
+                `<a href="https://www.youtube.com/watch?v=M7VSEZOQIlg" target="_blank" rel="noopener noreferrer">the weather forecast's calling for another cloudy day</a>`;
+            displayWeather(weathergirl);
+            temp_now = "-";
+            temp_min = "-";
+            temp_max = "-";
+            updateTemps();
             return;
-        };
+        }
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
         let response = await fetch(url);
         let data = await response.json();
@@ -89,6 +104,9 @@ function displayWeather(data) {
 
 // converts kelvin (raw temp) to F or C (depending on temp_units)
 function kelvin_conv(K) {
+    if (K == '-') {
+        return '-';
+    }
     switch (temp_unit) {
         case 'F':
             return Math.round((K - 273.15) * (9 / 5) + 32);
@@ -109,13 +127,15 @@ function kelvin_conv(K) {
 // :3
 function getAdvice(weather_id) {
     switch (true) {
+        case (weather_id == 'weathergirl'):
+            return "but even still i'll stay";
         case (weather_id == 800):
             return 'someday~';
-            case (weather_id == 801):
+        case (weather_id == 801):
             return 'nice~';
-            case (weather_id == 802):
+        case (weather_id == 802):
             return 'cloudy~';
-            case (weather_id == 803):
+        case (weather_id == 803):
             return 'nap time~';
         case (weather_id >= 700): // atmosphere
             return 'stay safe out there~';
@@ -137,6 +157,8 @@ function getBgUrl(weather_id) {
         stormy: './img/bg-stormy.jpg',
     };
     switch (true) {
+        case (weather_id == 'weathergirl'):
+            return bg.cloudy;
         case (weather_id == 800):
             return bg.sunny;
         case (weather_id === 801 || weather_id == 802):
@@ -153,6 +175,8 @@ function getBgUrl(weather_id) {
             return bg.cloudy;
         case (weather_id >= 200): //thunderstorm
             return bg.stormy;
+        default:
+            return bg.cloudy;
     }
 }
 
