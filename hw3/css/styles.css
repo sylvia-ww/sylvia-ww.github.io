@@ -79,6 +79,16 @@ body {
     font-weight: bold;
 }
 
+
+
+.subtext {
+    font-style: italic;
+    color: rgb(201, 201, 201);
+}
+.suggestion {
+    text-align: left;
+    flex-basis: 97%;
+}
 .text-fade {
     color: var(--faded-white);
 }

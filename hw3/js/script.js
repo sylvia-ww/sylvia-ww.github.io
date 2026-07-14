@@ -3,12 +3,11 @@ const EMPTY_SEARCH_ERROR = "hi please enter a city";
 const CITY_404_ERROR = "this city doesn't exist :( check your spelling?";
 let temp_unit = 'F';
 // in kelvin
-let temp_min = '273.15';
+let temp_min = '250';
 let temp_max = '333';
-let temp_now = '300';
+let temp_now = '270';
+updateTemps();
 
-
-// search bar...
 document.querySelector('#search-bar').addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         console.log("weather search initiated");
@@ -17,7 +16,7 @@ document.querySelector('#search-bar').addEventListener("keydown", (e) => {
 });
 document.querySelector('#search-icon').addEventListener("click", getWeather);
 document.querySelector('#toggle-btn').addEventListener("click", toggleUnits);
-updateTemps();
+
 
 
 async function getWeather() {
@@ -47,13 +46,6 @@ async function getWeather() {
     }
 }
 
-function updateTemps() {
-    document.getElementById('temperature').textContent = `${kelvin_conv(temp_now)}`;
-    document.getElementById('degree').textContent = `°${temp_unit}`; // middle f/c
-    document.getElementById('temp-min').textContent = `${kelvin_conv(temp_min)}°${temp_unit}`;
-    document.getElementById('temp-max').textContent = `${kelvin_conv(temp_max)}°${temp_unit}`;
-}
-
 function toggleUnits() {
     // toggled
     // change the var
@@ -64,10 +56,18 @@ function toggleUnits() {
     }
 
     // update existing info
-   
     updateTemps();
 }
 
+// update temps from internal vars(NO NEW INFO displayed)
+function updateTemps() {
+    document.getElementById('temperature').textContent = `${kelvin_conv(temp_now)}`;
+    document.getElementById('degree').textContent = `°${temp_unit}`; // middle f/c
+    document.getElementById('temp-min').textContent = `${kelvin_conv(temp_min)}°${temp_unit}`;
+    document.getElementById('temp-max').textContent = `${kelvin_conv(temp_max)}°${temp_unit}`;
+}
+
+// for new api weather info after search
 function displayWeather(data) {
     console.log("search successful, displayWeather()..");
 
@@ -75,6 +75,8 @@ function displayWeather(data) {
     document.getElementById('w-main').textContent = data.weather[0].main.toLowerCase();
     document.getElementById('w-desc').textContent = data.weather[0].description;
     document.getElementById('advice').textContent = getAdvice(data.weather[0].id);
+    document.querySelector('body').style.backgroundImage = `url(${getBgUrl(data.weather[0].id)})`;
+    document.getElementById('weather-icon').src = `https://openweathermap.org/payload/api/media/file/${data.weather[0].icon}.png`;
 }
 
 // converts kelvin (raw temp) to F or C (depending on temp_units)
@@ -90,24 +92,71 @@ function kelvin_conv(K) {
             return '-';
     }
 }
-
-
 // -- end of temperature functions
-// returns advice :3
+
+
+
+
+
+// :3
 function getAdvice(weather_id) {
-    return "bring an umbrella";
+    switch (true) {
+        case (weather_id == 800):
+            return 'someday~';
+            case (weather_id == 801):
+            return 'nice~';
+            case (weather_id == 802):
+            return 'cloudy~';
+            case (weather_id == 803):
+            return 'nap time~';
+        case (weather_id >= 700): // atmosphere
+            return 'stay safe out there~';
+        case (weather_id >= 600): //snow
+            return 'bring snow boots~';
+        case (weather_id >= 200): // 200 to 600 rain
+            return 'bring an umbrella~';
+            break;
+        default:
+            return `something went wrong~ weather code: ${weather_id}`;
+    }
 }
 
-function changeBg(weather_id) {
-
+function getBgUrl(weather_id) {
+    console.log(weather_id);
+    let bg = {
+        sunny: './img/bg-sunny.jpg',
+        cloudy: './img/bg-cloudy.jpg',
+        stormy: './img/bg-stormy.jpg',
+    };
+    switch (true) {
+        case (weather_id == 800):
+            return bg.sunny;
+        case (weather_id === 801 || weather_id == 802):
+            //801 - few clouds
+            //802 - scattered clouds
+            return bg.sunny;
+        case (weather_id == 803): //broken clouds
+            return bg.cloudy;
+        case (weather_id == 804): //overcast clouds
+            return bg.stormy;
+        case (weather_id >= 700): //atmosphere
+            return bg.stormy;
+        case (weather_id >= 300): //drizzle, rain, snow
+            return bg.cloudy;
+        case (weather_id >= 200): //thunderstorm
+            return bg.stormy;
+    }
 }
 
 
 
 
 
-//todo change background
 
+
+
+
+// validation
 // returns a boolean
 function isSearchEmpty() {
     return (document.querySelector('#search-bar').value == '');
