@@ -267,6 +267,7 @@ input:checked + .slider:before {
 
 a {
     text-decoration: none;
+    color: var(--text-blue);
 }
 a:visited {
   color: var(--text-blue);
