@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="search">
+            <input type="text" placeholder="Enter a city">
+            <button><img id="search-icon" src="./img/search-icon.png" alt="search icon"></button>
+        </div>
+    </div>
+
+
+    <row>
+        <div class="wrapper vertical  text-fade">
+            min
+            <div><img src="./img/temp-low.png" alt="lowest temperature"></div>
+            <div class="temp-detail">0°F</div>
+        </div>
+        <div class="wrapper">
+            <img class="bigger-img" src="./img/temp-now.png" alt="temperature now">
+            <div id="temperature">25</div>
+            <div id="degree-f">°F</div>
+            <div id="description">scattered clouds~</div>
+        </div>
+        <div class="wrapper vertical text-fade">
+            <div class="temp-detail">50°F</div>
+            <div><img src="./img/temp-high.png" alt="highest temperature"></div>
+            max
+        </div>
+    </row>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
