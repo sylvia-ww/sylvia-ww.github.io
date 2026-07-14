@@ -189,6 +189,7 @@ img.bigger-img {
 
 .blue, #weathergirl {
     color: var(--text-blue);
+    font-weight: bold;
     
 }
 
