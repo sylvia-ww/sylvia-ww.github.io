@@ -53,6 +53,7 @@ async function getWeather() {
             updateTemps();
             return;
         }
+        //ideally wrap this in try/catch
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
         let response = await fetch(url);
         let data = await response.json();
