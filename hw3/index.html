@@ -12,28 +12,34 @@
 
     <div class="wrapper">
         <div class="search">
-            <input type="text" placeholder="Enter a city">
+            <input id="search-bar" type="text" placeholder="Enter a city">
             <button><img id="search-icon" src="./img/search-icon.png" alt="search icon"></button>
         </div>
+    <div id="search-error"></div>
     </div>
 
 
     <row>
-        <div class="wrapper vertical  text-fade">
-            min
+        <div class="wrapper vertical text-fade bottom">
+            <div class="blue">min</div>
             <div><img src="./img/temp-low.png" alt="lowest temperature"></div>
-            <div class="temp-detail">0°F</div>
+            <div class="temp-detail" id="temp-min">0°F</div>
         </div>
         <div class="wrapper">
             <img class="bigger-img" src="./img/temp-now.png" alt="temperature now">
             <div id="temperature">25</div>
             <div id="degree-f">°F</div>
-            <div id="description">scattered clouds~</div>
+            <div id="description">
+                <span id="w-main">drizzle</span>
+                <img id="weather-icon" src="https://openweathermap.org/payload/api/media/file/09d.png" alt="weather icon"> 
+                <span id="w-desc">heavy intensity shower rain</span>
+            </div>
+            <div class="blue" id="advice">bring an umbrella~</div>
         </div>
-        <div class="wrapper vertical text-fade">
-            <div class="temp-detail">50°F</div>
+        <div class="wrapper vertical text-fade top">
+            <div id="temp-max">25°F</div>
             <div><img src="./img/temp-high.png" alt="highest temperature"></div>
-            max
+            <div class="blue">max</div>
         </div>
     </row>
 
