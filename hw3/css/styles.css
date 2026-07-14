@@ -97,7 +97,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: min(90vw, 25rem);
+    width: min(80dvw, 25rem);
     background-color: var(--wrapper-bg);
     backdrop-filter: blur(70px);
     padding: 1rem;
@@ -195,6 +195,7 @@ img.bigger-img {
 
 #weathergirl {
     margin: 0.5rem 0;
+    font-weight: 500;
     border-bottom: 1px dotted var(--text-blue);
 }
 
