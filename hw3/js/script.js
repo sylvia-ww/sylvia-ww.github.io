@@ -21,6 +21,7 @@ document.querySelector('#toggle-btn').addEventListener("click", toggleUnits);
 
 async function getWeather() {
     clearError(); // prevenet leftover errors
+    document.getElementById('weathergirl').textContent = ''; // byebye
     if (isSearchEmpty()) {
         // hi please enter a city
         console.log("validation issue: the search is empty :(");
@@ -34,6 +35,8 @@ async function getWeather() {
         if (city == 'weathergirl') {
             // good song :)
             window.open('https://www.youtube.com/watch?v=M7VSEZOQIlg', '_blank');
+            document.getElementById('weathergirl').textContent = "the weather forecast's calling for another cloudy day~"
+            return;
         };
         let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
         let response = await fetch(url);
