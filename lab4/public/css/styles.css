@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap');
+body {
+    background-color: #20242b;
+    text-align: center;
+    color: #88a1a7;
+    font-family: Quicksand, Arial, Helvetica, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0 10vw 5rem;
+}
+img {
+    border-radius: 1rem;
+    max-width: 40rem;
+}
+nav {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+a, a:visited {
+    color: #88ccdd;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+    width: 100%;
+    background: linear-gradient(to top, 
+    rgb(12, 15, 16),
+    rgba(32, 40, 43, 0));
+}
